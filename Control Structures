@@ -1,0 +1,121 @@
+/*
+IT205 Intro to Obj Oriented Programming
+programmer: Michelle Johnstone
+Date: September 5, 2019
+Mathematical operators and expressions, order of precedence,
+logical expressions, control structures. 
+
+Lecture: 
+Math operators * multiplication, / division, + addition, - subtraction, % modulus or remainder of division 
+= assignment operator assigns value on RHS to variable on the LHS 
+
+
+4*3-21/7%8 How is this expression evaluated by a computer? 
+Order of precedence 
+1st unary operators +,-,  examples: x = -3 
+2nd *  / %
+3rd + -
+4th relational operators 
+5th == != equality operators (Relational) 
+last assigment operator 
+
+Equal precedence then left to right 
+() expressions in parentheses evaluated first
+
+logical expressions: evaluate to true or false 
+you are comparing two values using relational operators 
+
+5>3 false 5.98> 3.142 true 
+
+'A' > 'Z' false ASCII is used to represent every character and numbers in the english language.
+
+Remember 'A' is less than 'a' 
+
+how about comparing strings? "Jack" < "Henry" false 
+Jack < Jackie true 
+
+arrives based on 
+
+write a program before we look at control structures 
+
+given the number of cents a person has, tell me how many dollars, quarters, dimes, nickels and cents it can be converted into 
+
+
+all expressions are cast ( temporary) to the strongest datatype implicitly 
+can explicitly cast to a stronger or weaker datatype: 
+dataype( expression or variable) 
+
+the int/int gives you an interger result. any decimal part that results will be truncated 
+
+10/3 results in 3 
+
+10/3.0 is int/double - implcitly cast to strongest datatype 
+10.0/3.0 resulting in 3.3333
+weakest is char, int, float, double being strongest 
+float (10)/ 3 ==10.0/3 ==10.0/3.0  resulting in 3.333 
+
+
+
+
+ *
+*/
+package controlstructures1;
+import java.util.Scanner; 
+
+/**
+ *
+ * @author mjohn003
+ */
+public class ControlStructures1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     Scanner input = new Scanner(System.in); // declare scanner object
+     
+      //declare variables 
+     int centsIn, dollars, quarters, dimes, nickels, cents, remainder; 
+
+    //prompt user to enter the cents they have
+     System.out.print("Please enter the number of cents: ");
+     
+     //read the entered value 
+     centsIn= input.nextInt();
+     
+     //echo the input 
+     System.out.println("You entered " + centsIn);
+     
+             dollars=centsIn/100;
+             remainder=centsIn % 100;
+             System.out.println("you have " + dollars + "Dollars");
+             
+             
+             quarters= remainder/25; 
+             remainder = remainder % 25; 
+             System.out.println("you have " + quarters + "quarters" );
+             
+             dimes= remainder/10;
+             remainder= remainder % 10; 
+             System.out.println("you have " + dimes + "dimes");
+             
+             
+             nickels= remainder/5;
+             remainder= remainder %5;
+             System.out.println("you have " + nickels + "nickels");
+             
+             
+             System.out.println("I have " + remainder + " cents left");
+            
+                     
+     
+     
+     
+     
+     //read the entered value
+     
+        
+        
+    }//end of main 
+    
+}// end of class  
